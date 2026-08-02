@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+</head>
+<body>
+  <form autocomplete="off" method="post">
+    <fieldset>
+     <legend>Employee Details</legend>  <br> 
+
+    <div>
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" name="firstName" required pattern="[A-Za-z]+" title="letters only" autofocus>
+    </div><br>
+    <div>
+        <label for="lastName">Last Name: </label>
+         <input type="text" id="lastName" name="lastName" min="5">
+    </div><br>     
+    <div>
+         <label for="num">Mobile: </label>
+         <input type="text" name="num" id="num" min="11" max="11" pattern="(010,011,012,015)" title="must start with 010, 011, 012, 015">
+    </div><br>
+   <div>
+      <label for="courses">Courses:</label>
+      <input list="coursesList" id="courses" name="courses">
+      <datalist id="coursesList">
+        <option value="HTML">
+        <option value="CSS">
+        <option value="JavaScript">
+        <option value="React">
+        <option value="Node.js">
+      </datalist>
+    </div><br>
+    <div>
+        <label for="uploadimg">Upload Image: </label>
+        <input type="file" id="uploadimg" name="uploadimg" accept=".png" required>
+    </div><br>
+    <div>
+        <label for="comment">Comment: </label>
+        <textarea id="comment" name="comment" cols="15" rows="5" required></textarea>
+    </div><br>
+    <div>
+        <label for="date">Date: </label>
+        <input type="date" id="date" name="date" required>
+    </div><br>
+     <div>
+        <label>Gender:</label>
+        <label> <input type="radio" name="gender" value="male" required>  Male</label> &nbsp;&nbsp;
+        <label><input type="radio" name="gender" value="female" required>  Female</label>
+    </div><br>
+     <div>
+      <label>Tracks: </label>
+      <label><input type="checkbox" name="tracks" value="0" checked> Frontend</label>
+      <label><input type="checkbox" name="tracks" value="1"> Backend</label>
+      <label><input type="checkbox" name="tracks" value="2"> Full Stack</label>
+    </div><br>
+    <div>
+        <label>Range </label>
+        <input type="range" id="range" name="range" min="10" max="100">
+    </div><br>
+    <div> 
+            <input type="submit" value="Submit">
+    </div>
+    </fieldset>
+  </form>  
+
+</body>
+</html>
