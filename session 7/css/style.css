@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 4% 0%;
+}
+ 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 100px;
+}
+ 
+.card-hover {
+    width: 260px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;        
+}
+
+.back-card{
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: white;
+    box-shadow: 0 0 4px 3px lightgray;
+}
+ 
+.card-text {
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+ 
+.card-text h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #1c1c1c;
+}
+ 
+.card-text p {
+    font-size: 13px;
+    color: #8a8a8a;
+}
+
+.front-card {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0px 0px 4px 3px lightgray;
+    transition: 0.5s;
+}
+ 
+.front-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-hover:hover .front-card {
+    transform: translate(-30px, -60px);
+}
+ 
+.card-hover:hover .card-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/**************section 2******************/
+
+.option-cards {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 40px;
+ align-items: center;
+}
+
+.option-card {
+ width: 220px;
+ position: relative;
+ overflow: hidden;
+ padding: 20px;
+ background: white;
+ box-shadow: 0px 0px 4px 2px lightgray;
+ transition: all 0.45s ease;
+ cursor: pointer;
+}
+
+.option-card h2 {
+ font-size: 16px;
+ margin-bottom: 8px;
+ position: relative;
+ z-index: 2;
+ transition: color 0.4s;
+}
+
+.option-card p {
+ color: gray;
+ font-size: 14px;
+ position: relative;
+ z-index: 2;
+ transition: color 0.4s;
+}
+    /*****option 1******/
+.option-1 {
+ background-color: #e3f2f1;
+}
+
+.option-1 .corner-badge {
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 100%;
+ height: 100%;
+ background: teal;
+ clip-path: circle(45px at 100% 0%);
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-end;
+ padding: 10px 10px 0 0;
+ box-sizing: border-box;
+ color: white;
+ font-size: 13px;
+ transition: clip-path 0.5s ease-in-out;
+ z-index: 1;
+}
+
+.option-1:hover .corner-badge {
+ clip-path: circle(150% at 100% 0%);
+}
+
+.option-1:hover h2,
+.option-1:hover p {
+ color: white;
+}
+
+ /******option 2*******/
+.option-2{
+    padding: 30px;
+    background:  #e3f2f1;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.45s ease, box-shadow 0.3 ease;
+}
+
+.option-2 .corner-badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background: teal;
+    border-bottom-left-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-2:hover .corner-badge{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 35px lightgray;
+}
+
+.option-2:hover{
+    box-shadow: 0 10px 30px lightgray;
+}
+
+/******option 3*********/
+
+.option-3 {
+    position: relative;
+    width: 280px;
+    padding: 24px 26px;
+    background:  #e3f2f1;
+    border: 3px solid transparent;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+ 
+.option-3 .corner-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    color: white;
+    background: teal;
+    border-bottom-left-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.option-3:focus {
+    border-color: teal;
+}
+ 
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;      
+    transition: opacity 0.3s ease;
+    z-index: 10;              
+}
+ 
+.cards-wrap:focus-within .page-overlay {
+    opacity: 1;
+    pointer-events: auto;     
+}
+
+ /**** option 4****/
+.option-4 {
+ border: 1px solid lightgray;
+ outline: 2px solid transparent;
+ outline-offset: -2px;
+ align-items: center;
+}
+
+.option-4 .icon-4 {
+ font-size: 26px;
+ color: gray;
+ margin-bottom: 12px;
+ display: block;
+}
+
+.option-4 .corner-fold {
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #c2035c;
+ clip-path: polygon(100% 0, 100% 0, 100% 0);
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-end;
+ padding: 10px 10px 0 0;
+ box-sizing: border-box;
+ transition: clip-path 0.45s ease-in-out;
+ z-index: 3;
+}
+
+.option-4 .corner-fold i {
+ color: white;
+ font-size: 11px;
+ opacity: 0;
+ transform: translate(5px, -5px);
+ transition: all 0.45s ease-in-out;
+}
+
+.option-4:hover {
+ border-color: #c2035c;
+ outline-color: #c2035c;
+}
+
+.option-4:hover .corner-fold {
+ clip-path: polygon(89% 0, 100% 0, 100% 100%);
+}
+
+.option-4:hover .corner-fold i {
+ opacity: 1;
+ transform: translate(0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
